@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2027 名古屋 6 天 5 夜親子冒險手札 ✈️ 全家同行版計畫 A</title>
+    <!-- Google Fonts: Zen Maru Gothic & M PLUS Rounded 1c -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-canvas: #FAF7F2;
+            --text-main: #4A403A;
+            --text-sub: #8C827A;
+            --color-mint: #A8E6CF;
+            --color-mint-dark: #62B694;
+            --color-yellow: #FFEAA7;
+            --color-yellow-dark: #F3BA35;
+            --color-peach: #FFB7B2;
+            --color-peach-dark: #E5736E;
+            --color-sky: #A0C4FF;
+            --color-sky-dark: #5B8BEB;
+            --color-lavender: #E0C3FC;
+            --card-border: #4A403A;
+            --shadow-3d: 0 4px 0 #4A403A;
+            --spring-easing: cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-canvas);
+            background-image: radial-gradient(#E5DDD3 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
+            font-family: 'Zen Maru Gothic', 'M PLUS Rounded 1c', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 24px 16px 80px;
+            max-width: 1040px;
+            margin: 0 auto;
+        }
+
+        /* 標題與頂部手帳造型 */
+        .masthead {
+            text-align: center;
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .washi-tape-hero {
+            display: inline-block;
+            background: repeating-linear-gradient(45deg, #FFD54F, #FFD54F 10px, #FFEAA7 10px, #FFEAA7 20px);
+            padding: 4px 28px;
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--text-main);
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(74,64,58,0.12);
+            transform: rotate(-1.5deg);
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .main-title {
+            font-size: clamp(22px, 4vw, 34px);
+            font-weight: 900;
+            color: var(--text-main);
+            line-height: 1.25;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .subtitle {
+            font-size: clamp(13px, 2.5vw, 15px);
+            color: var(--text-sub);
+            font-weight: 700;
+        }
+
+        /* 控制列：音效開關與列印 */
+        .top-toolbar {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 16px 0 24px;
+            flex-wrap: wrap;
+        }
+
+        .kawaii-btn {
+            background: #FFFFFF;
+            border: 2px solid var(--card-border);
+            border-radius: 24px;
+            padding: 8px 18px;
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--text-main);
+            cursor: pointer;
+            box-shadow: var(--shadow-3d);
+            transition: all 0.2s var(--spring-easing);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .kawaii-btn:hover {
+            transform: translateY(-2px) rotate(1deg);
+        }
+
+        .kawaii-btn:active {
+            transform: translateY(3px) !important;
+            box-shadow: 0 1px 0 var(--card-border) !important;
+        }
+
+        .btn-yellow { background: var(--color-yellow); }
+        .btn-mint { background: var(--color-mint); }
+        .btn-peach { background: var(--color-peach); }
+        .btn-sky { background: var(--color-sky); }
+
+        /* 卡片共用樣式 (日系手帳感) */
+        .kawaii-card {
+            background: #FFFFFF;
+            border: 2.5px solid var(--card-border);
+            border-radius: 24px;
+            padding: 20px;
+            position: relative;
+            box-shadow: var(--shadow-3d);
+            margin-bottom: 24px;
+            transition: transform 0.25s var(--spring-easing);
+        }
+
+        .tape-accent {
+            position: absolute;
+            top: -10px;
+            left: 28px;
+            height: 20px;
+            width: 80px;
+            background: rgba(255, 183, 178, 0.7);
+            border-radius: 2px;
+            transform: rotate(-2deg);
+        }
+
+        .card-header-title {
+            font-size: 17px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 14px;
+            color: var(--text-main);
+        }
+
+        /* 頂部三巨頭 Grid：成員、航班、基地飯店 */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px;
+            margin-bottom: 28px;
+        }
+
+        .team-badge-group {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .member-pill {
+            background: #FAF7F2;
+            border: 2px dashed #D5C7B8;
+            border-radius: 16px;
+            padding: 10px 12px;
+            text-align: center;
+            font-size: 13px;
+            line-height: 1.35;
+        }
+        .member-pill b { font-weight: 800; display: block; font-size: 14px; }
+        .member-pill span { color: var(--text-sub); font-size: 11px; }
+
+        .flight-row {
+            background: #FAF7F2;
+            border-radius: 16px;
+            padding: 10px 14px;
+            margin-bottom: 10px;
+            border: 1.5px solid #EADBCC;
+            font-size: 13px;
+        }
+        .flight-row:last-child { margin-bottom: 0; }
+        .flight-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+
+        /* 基地垂直地圖 */
+        .hotel-layers {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .hotel-layer-item {
+            background: #FAF7F2;
+            padding: 6px 12px;
+            border-radius: 12px;
+            font-size: 12.5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-left: 5px solid var(--color-mint-dark);
+        }
+
+        /* 天數分頁導航標籤 */
+        .day-nav-wrapper {
+            position: sticky;
+            top: 12px;
+            z-index: 50;
+            margin-bottom: 24px;
+            padding-bottom: 4px;
+        }
+
+        .day-nav {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 6px 6px 10px;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+        }
+        .day-nav::-webkit-scrollbar { display: none; }
+
+        .day-tab-btn {
+            flex: 0 0 auto;
+            background: #FFFFFF;
+            border: 2px solid var(--card-border);
+            border-radius: 20px;
+            padding: 10px 16px;
+            font-size: 13.5px;
+            font-weight: 800;
+            color: var(--text-main);
+            cursor: pointer;
+            box-shadow: 0 3px 0 var(--card-border);
+            transition: all 0.2s var(--spring-easing);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 86px;
+        }
+
+        .day-tab-btn .tab-sub {
+            font-size: 10.5px;
+            font-weight: 600;
+            color: var(--text-sub);
+        }
+
+        .day-tab-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .day-tab-btn.active {
+            background: var(--color-yellow);
+            transform: translateY(2px);
+            box-shadow: 0 1px 0 var(--card-border);
+            border-color: var(--card-border);
+        }
+
+        /* 天數內容面板 */
+        .day-panel {
+            display: none;
+            animation: popIn 0.35s var(--spring-easing);
+        }
+        .day-panel.active {
+            display: block;
+        }
+
+        @keyframes popIn {
+            0% { opacity: 0; transform: scale(0.97) translateY(8px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .day-banner {
+            border-radius: 20px;
+            padding: 14px 18px;
+            margin-bottom: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            border: 2px solid var(--card-border);
+        }
+
+        .day-banner-title {
+            font-size: 18px;
+            font-weight: 900;
+        }
+
+        .day-banner-tag {
+            background: #FFFFFF;
+            padding: 3px 12px;
+            border-radius: 16px;
+            font-size: 12px;
+            font-weight: 800;
+            border: 1.5px solid var(--card-border);
+        }
+
+        /* 時間軸列表 */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .timeline-step {
+            display: flex;
+            gap: 14px;
+            background: #FFFFFF;
+            border: 2px solid var(--card-border);
+            border-radius: 20px;
+            padding: 14px 18px;
+            box-shadow: 0 3px 0 var(--card-border);
+            transition: transform 0.2s var(--spring-easing);
+        }
+
+        .timeline-step:hover {
+            transform: translateX(3px);
+        }
+
+        .time-bubble {
+            flex-shrink: 0;
+            width: 72px;
+            text-align: center;
+            background: var(--color-yellow);
+            border: 2px solid var(--card-border);
+            border-radius: 14px;
+            padding: 6px 2px;
+            font-size: 12.5px;
+            font-weight: 900;
+            height: fit-content;
+            box-shadow: 0 2px 0 var(--card-border);
+        }
+
+        .timeline-content {
+            flex: 1;
+        }
+
+        .timeline-title-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 6px;
+        }
+
+        .timeline-title {
+            font-size: 15.5px;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+
+        .stroller-tag {
+            background: #E8F5E9;
+            color: #2E7D32;
+            border: 1px solid #A5D6A7;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .food-tag {
+            background: #FFF3E0;
+            color: #E65100;
+            border: 1px solid #FFCC80;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .timeline-desc {
+            font-size: 13.5px;
+            color: #5C524B;
+            line-height: 1.5;
+        }
+
+        /* 每日特色亮點卡片 (包含美食與貼士) */
+        .day-bottom-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 14px;
+            margin-top: 18px;
+        }
+
+        .spotlight-box {
+            background: #FFFDF9;
+            border: 2px dashed #E0D6C8;
+            border-radius: 18px;
+            padding: 14px 16px;
+            font-size: 13px;
+        }
+        .spotlight-box b {
+            font-size: 14px;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        /* 集章挑戰區 (Stamp Rally) */
+        .stamp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 14px;
+            margin-top: 16px;
+        }
+
+        .stamp-spot {
+            background: #FAF7F2;
+            border: 2.5px dashed #D5C7B8;
+            border-radius: 20px;
+            padding: 16px 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.25s var(--spring-easing);
+            min-height: 135px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .stamp-spot:hover {
+            transform: scale(1.03) rotate(-1deg);
+            border-color: var(--text-main);
+        }
+
+        .stamp-spot.stamped {
+            background: #FFF8F8;
+            border-style: solid;
+            border-color: #E5736E;
+        }
+
+        .stamp-hanko {
+            width: 76px;
+            height: 76px;
+            border-radius: 50%;
+            border: 3px double #D32F2F;
+            color: #D32F2F;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            font-weight: 900;
+            padding: 4px;
+            box-shadow: inset 0 0 4px rgba(211,47,47,0.2);
+            animation: stampBounce 0.4s var(--spring-easing);
+            user-select: none;
+        }
+
+        @keyframes stampBounce {
+            0% { transform: scale(2.2) rotate(15deg); opacity: 0; }
+            100% { transform: scale(1) rotate(-3deg); opacity: 1; }
+        }
+
+        .stamp-label {
+            margin-top: 8px;
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+
+        /* 行李＆推車檢查清單 */
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .check-card {
+            background: #FAF7F2;
+            border: 2px solid #EADBCC;
+            border-radius: 18px;
+            padding: 14px 16px;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+            font-size: 13.5px;
+            font-weight: 700;
+            cursor: pointer;
+            user-select: none;
+        }
+        .check-item:last-child { margin-bottom: 0; }
+
+        .custom-checkbox {
+            width: 22px;
+            height: 22px;
+            border: 2px solid var(--card-border);
+            border-radius: 6px;
+            background: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            box-shadow: 0 2px 0 var(--card-border);
+        }
+
+        .check-item.done .custom-checkbox {
+            background: var(--color-mint);
+        }
+        .check-item.done .custom-checkbox::after {
+            content: '✓';
+            color: var(--text-main);
+            font-weight: 900;
+            font-size: 14px;
+        }
+
+        .check-item.done span {
+            text-decoration: line-through;
+            color: #A39890;
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 14px;
+            background: #EADBCC;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 14px 0 6px;
+            border: 1.5px solid var(--card-border);
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--color-yellow), var(--color-mint));
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        /* 頁尾 */
+        .footer-banner {
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-sub);
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px dashed #E0D6C8;
+        }
+
+        /* 列印最適化 */
+        @media print {
+            body { background: #FFFFFF; padding: 0; }
+            .day-nav-wrapper, .top-toolbar, .stamp-grid, .checklist-section { display: none; }
+            .day-panel { display: block !important; margin-bottom: 30px; page-break-inside: avoid; }
+            .kawaii-card { box-shadow: none !important; border: 1.5px solid #000; }
+        }
+
+        @media (max-width: 640px) {
+            body { padding: 16px 10px 60px; }
+            .kawaii-card { padding: 14px; border-radius: 20px; }
+            .time-bubble { width: 62px; font-size: 11px; }
+            .timeline-step { padding: 12px; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 頂部手帳橫幅 -->
+    <header class="masthead">
+        <div class="washi-tape-hero">✦ 2027.01.20 - 01.25 愛知自由行 ✦</div>
+        <h1 class="main-title">
+            <span>2027 名古屋親子冒險手札</span>
+            <span style="font-size: 24px;">🎒✈️</span>
+        </h1>
+        <p class="subtitle">全家全程同行 ✕ 推車無障礙優先 ✕ 美食心願大滿足（計畫 A 最新定案版）</p>
+
+        <!-- 工具列按鈕 -->
+        <div class="top-toolbar">
+            <button class="kawaii-btn btn-yellow" id="audioToggleBtn" onclick="toggleAudio()">
+                <span>🔔</span> <span id="audioStatusText">音效：開啟中</span>
+            </button>
+            <button class="kawaii-btn btn-mint" onclick="scrollToSection('stampSection')">
+                <span>💮</span> <span>集章護照</span>
+            </button>
+            <button class="kawaii-btn btn-peach" onclick="scrollToSection('checkSection')">
+                <span>🎒</span> <span>行李檢查表</span>
+            </button>
+            <button class="kawaii-btn btn-sky" onclick="window.print()">
+                <span>🖨️</span> <span>列印手冊</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- 三巨頭摘要資訊卡 -->
+    <section class="info-grid">
+        <!-- 探險隊員 -->
+        <div class="kawaii-card">
+            <div class="tape-accent" style="background: rgba(168, 230, 207, 0.7);"></div>
+            <div class="card-header-title">
+                <span>👨‍👩‍👧‍👦</span> 探險隊員（全家同進同出）
+            </div>
+            <div class="team-badge-group">
+                <div class="member-pill">
+                    <span style="font-size: 20px;">👨</span>
+                    <b>隊長爸爸</b>
+                    <span>推車搬運・3C電器</span>
+                </div>
+                <div class="member-pill">
+                    <span style="font-size: 20px;">👩</span>
+                    <b>策劃媽媽</b>
+                    <span>conte器皿・手沖咖啡</span>
+                </div>
+                <div class="member-pill">
+                    <span style="font-size: 20px;">👦</span>
+                    <b>哥哥 (7歲)</b>
+                    <span>科學探索・樂高駕照</span>
+                </div>
+                <div class="member-pill">
+                    <span style="font-size: 20px;">👶</span>
+                    <b>弟弟 (2.5歲)</b>
+                    <span>得寶積木・推車充電</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 航班資訊 -->
+        <div class="kawaii-card">
+            <div class="tape-accent" style="background: rgba(255, 234, 167, 0.7);"></div>
+            <div class="card-header-title">
+                <span>✈️</span> 中華航空 (CI) 來回直飛
+            </div>
+            <div class="flight-row">
+                <span class="flight-tag" style="background: var(--color-mint); color: #1B5E20;">去程 CI 150</span>
+                <div><b>2027/1/20 (三) 17:15 ➔ 20:50</b></div>
+                <div style="font-size: 11.5px; color: var(--text-sub);">台北桃園 (TPE) ➔ 名古屋中部 (NGO)・出關直奔 μ-SKY</div>
+            </div>
+            <div class="flight-row" style="border-color: #FFCDD2; background: #FFF9F9;">
+                <span class="flight-tag" style="background: var(--color-peach); color: #B71C1C;">回程 CI 151 ⚠️ 早班機</span>
+                <div><b>2027/1/25 (一) 09:55 ➔ 12:20</b></div>
+                <div style="font-size: 11.5px; color: var(--text-sub);">名古屋中部 (NGO) ➔ 台北桃園 (TPE)・<b>07:30 需抵機場</b></div>
+            </div>
+        </div>
+
+        <!-- 基地大樓 -->
+        <div class="kawaii-card">
+            <div class="tape-accent" style="background: rgba(160, 196, 255, 0.7);"></div>
+            <div class="card-header-title">
+                <span>🏨</span> 基地：JR Gate Tower Hotel
+            </div>
+            <div class="hotel-layers">
+                <div class="hotel-layer-item"><span><b>15F</b> 大廳與景觀星巴克</span><span style="font-size: 11px; color: var(--text-sub);">連住 5 晚免搬行李</span></div>
+                <div class="hotel-layer-item"><span><b>12-13F</b> 美食街</span><span style="font-size: 11px; color: var(--text-sub);">熱騰騰晚餐不怕吹風</span></div>
+                <div class="hotel-layer-item"><span><b>11F</b> UNIQLO & GU 旗艦店</span><span style="font-size: 11px; color: var(--text-sub);">買完搭電梯直接回房</span></div>
+                <div class="hotel-layer-item"><span><b>9-10F</b> Bic Camera 電器行</span><span style="font-size: 11px; color: var(--text-sub);">相機/Switch/玩具扭蛋</span></div>
+                <div class="hotel-layer-item"><span><b>1F</b> 交通大動脈</span><span style="font-size: 11px; color: var(--text-sub);">青波線/名鐵直通直達</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 天數切換 Tab 導航 -->
+    <nav class="day-nav-wrapper">
+        <div class="day-nav">
+            <button class="day-tab-btn active" onclick="switchDay(1)">
+                <span>Day 1</span>
+                <span class="tab-sub">1/20 (三)</span>
+            </button>
+            <button class="day-tab-btn" onclick="switchDay(2)">
+                <span>Day 2</span>
+                <span class="tab-sub">1/21 (四)</span>
+            </button>
+            <button class="day-tab-btn" onclick="switchDay(3)">
+                <span>Day 3</span>
+                <span class="tab-sub">1/22 (五)</span>
+            </button>
+            <button class="day-tab-btn" onclick="switchDay(4)">
+                <span>Day 4</span>
+                <span class="tab-sub">1/23 (六)</span>
+            </button>
+            <button class="day-tab-btn" onclick="switchDay(5)">
+                <span>Day 5</span>
+                <span class="tab-sub">1/24 (日)</span>
+            </button>
+            <button class="day-tab-btn" onclick="switchDay(6)">
+                <span>Day 6</span>
+                <span class="tab-sub">1/25 (一)</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ==================== DAY 1 ==================== -->
+    <article class="day-panel active" id="day1">
+        <div class="day-banner" style="background: var(--color-yellow);">
+            <div>
+                <span class="day-banner-title">Day 1：抵達名站 ➔ 直奔高樓基地 Check-in</span>
+                <div style="font-size: 12.5px; color: #6D4C41; margin-top: 2px;">2027/1/20 (週三) ｜ 全程推車無障礙直通，戶外 0 受凍</div>
+            </div>
+            <span class="day-banner-tag">基地入駐夜</span>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-step">
+                <div class="time-bubble">17:15<br>20:50</div>
+                <div class="timeline-content">
+                    <div class="timeline-title-row">
+                        <span class="timeline-title">華航 CI 150 飛行時光 ➔ 抵達中部國際機場</span>
+                        <span class="stroller-tag">機邊托運推車</span>
+                    </div>
+                    <div class="timeline-desc">
+                        機上享用兒童餐點。20:50 降落後提領行李與手推車，沿無障礙平路指標步行約 3~5 分鐘抵達名鐵機場站。
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-step">
+                <div class="time-bubble">21:30</div>
+                <div class="timeline-content">
+                    <div class="timeline-title-row">
+                        <span class="timeline-title">搭乘名鐵 μ-SKY 特急直達名站</span>
+                        <span class="stroller-tag">全車指定席</span>
+                    </div>
+                    <div class="timeline-desc">
+                        極速 28 分鐘直達名鐵名古屋站！車廂前後具備寬敞大件行李放置處，不需抱著孩子狼狽擠普通電車。
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-step">
+                <div class="time-bubble">22:05</div>
+                <div class="timeline-content">
+                    <div class="timeline-title-row">
+                        <span class="timeline-title">JR Gate Tower 15F 入住 ＆ 暖心宵夜</span>
+                        <span class="food-tag">車站熱食</span>
+                    </div>
+                    <div class="timeline-desc">
+                        從名鐵站搭室內無障礙升降電梯直通飯店 Lobby 辦理入住。此時百貨已打烊，可由全家在車站旁便利商店或熱食拉麵外帶宵夜，讓兩兄弟洗個熱水澡舒服入睡。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-bottom-grid">
+            <div class="spotlight-box">
+                <b>💡 冬夜貼心叮嚀</b>
+                名站地下街錯綜複雜，若推車在地下一時找不到升降機，直接搭電梯上一樓地面，路面平坦寬廣更好找飯店入口！
+            </div>
+            <div class="spotlight-box">
+                <b>🍜 今晚好眠目標</b>
+                讓 7 歲哥哥與 2.5 歲弟弟在飯店加寬舒適大床睡飽，準備迎接明天的科學館與美食購物日！
+            </div>
+        </div>
+    </article>
+
+    <!-- ==================== DAY 2 ==================== -->
+    <article class="day-panel" id="day2">
+        <div class="day-banner" style="background: var(--color-mint);">
+            <div>
+                <span class="day-banner-title">Day 2：科學動手玩 ➔ 榮商圈選品買鞋 ➔ 蓬萊軒鰻魚飯</span>
+                <div style="font-size: 12.5px; color: #1B5E20; margin-top: 2px;">2027/1/21 (週四) ｜ 經典喫茶早餐・燕三條器物・全家同逛</div>
+            </div>
+            <span class="day-banner-tag">大人小孩雙滿足</span>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-step">
+                <div class="time-bubble">07:30</div>
+                <div class="timeline-content">
+                    <div class="timeline-title-row">
+                        <span class="timeline-title">全家晨間喫茶：珈琲処 KAKO（柳橋店）</span>
+                        <span class="food-tag">經典紅豆果醬厚片</span>
+                    </div>
+                    <div class="timeline-desc">
+                        選用柳橋店因四人沙發桌位較充足！點四色自製果醬＋鮮奶油紅豆泥厚片吐司與香濃熱奶，全家圍坐體驗名古屋道地 Morning 晨間文化。
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-step">
+                <div class="time-bubble">09:30</div>
+                <div class="timeline-content">
+                    <div class="timeline-title-row">
+                        <span class="timeline-title">名古屋市科學館 ＆ 白川公園</span>
+                        <span class="stroller-tag">推車平整大空間</span>
+                    </div>
+                    <div class="timeline-desc">
+                        搭地鐵東山線至伏見站。巨大銀色天文巨蛋球體！館內設有龍捲風、放電實驗與水力操作展具，<b>7 歲哥哥動手玩到不想走</b>；公園寬敞適合 <b>2.5 歲弟弟推車曬太陽</b>。
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-step">
+                <div class="time-bubble">13:30</div>
+                <div class="timeline-content">
+                    <div class="timeline-title-row">
+                        <span class="timeline-title">中日大樓 COOK&DINE HAYAMA（conte 料理器物）</span>
+                        <span class="stroller-tag">地下街直通電梯</span>
+                    </div>
+                    <div class="timeline-desc">
+                        全家抵達榮站直通中日大樓 2F。媽媽親手觸摸燕三條 <b>conte まかないボウル</b> 料理盆、平底濾網與量匙細膩卷邊！全家隨後上 7F 空中花園看市景小跑跳。
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-step">
+                <div class="time-bubble">15:15</div>
+                <div class="timeline-content">
+                    <div class="timeline-title-row">
+                        <span class="timeline-title">Alpen NAGOYA 旗艦店（全家挑選好鞋）</span>
+                        <span class="stroller-tag">6層樓運動旗艦</span>
+                    </div>
+                    <div class="timeline-desc">
+                        步行 7 分鐘至 Nadya Park。全家一起進行 3D 腳型精密掃描，一次挑齊哥哥運動鞋、弟弟幼兒步態鞋與爸媽長途耐走鞋。
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-step">
+                <div class="time-bubble">17:00</div>
+                <div class="timeline-content">
+                    <div class="timeline-title-row">
+                        <span class="timeline-title">あつた蓬莱軒（松坂屋名古屋店 南館 10F）</span>
+                        <span class="food-tag">百年鰻魚三吃始祖</span>
+                    </div>
+                    <div class="timeline-desc">
+                        就在 Alpen 正對面！抽號碼牌後在松坂屋暖氣百貨逛街候位，推車可推進店。酥脆焦香炭火鰻魚三吃，高湯茶泡飯老少咸宜！餐後漫步久屋大通公園看未來塔夜景回房。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-bottom-grid">
+            <div class="spotlight-box">
+                <b>🍳 conte 必入手清單</b>
+                まかないボウル 深型調理盆 180mm、平底瀝水濾網、量匙「やくさじ」大匙小匙。
+            </div>
+            <div class="spotlight-box">
+                <b>🥢 蓬萊軒吃法小課堂</b>
+                第一碗吃原味炭香；第二碗加入海苔芥末蔥花；第三碗沖入鮮美高湯享用茶泡飯！
+            </div>
+        </div>
+    </article>
+
+    <!-- ==================== DAY 3 ==================== -->
+    <article class="day-panel" id="day3">
+        <div class="day-banner" style="background: var(--color-peach);">
+            <div>
+                <span class="day-banner-title">Day 3：日本樂高樂園（Legoland）平日極速暢玩 ➔ 矢場炸豬排</span>
+                <div style="font-size: 12.5px; color: #B71C1C; margin-top: 2px;">2027/1/22 (週五) ｜ 週五免大排長龍・雙寶分齡同樂</div>
+            </div>
+            <span class="day-banner-tag">歡笑與積木日</span>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-step">
+                <div class="time-bubble">09:15</div>
+                <div class="timeline-content">
+                    <div class="timeline-title-row">
+                        <span class="timeline-title">搭乘青波線（あおなみ線）直達金城埠頭</span>
+                        <span class="stroller-tag">電梯下 1F 直上車</span>
+                    </div>
+                    <div class="timeline-desc">
+                        飯店電梯下 1F 刷卡進站，車程 24 分鐘直達終點「金城ふ頭站」，出站全平路連通天橋直推到樂園大門。
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-step">
+                <div class="time-bubble">10:00<br>15:30</div>
+                <div class="timeline-content">
+                    <div class="timeline-title-row">
+                        <span class="timeline-title">全家樂高樂園全面探索（週五排隊僅 5~15 分鐘）</span>
+                        <span class="stroller-tag">全平路無障礙</span>
+                    </div>
+                    <div class="timeline-desc">
+                        • <b>2.5 歲弟弟</b>：得寶積木樂園（Duplo Valley）巨型軟積木池、得寶快車小火車。<br>
+                        • <b>7 歲哥哥</b>：駕駛學校（Driving School）考取專屬樂高駕照、潛水艇冒險（Submarine）看真實熱帶魚與鯊魚！<br>
+                        • <b>全家同行</b>：迷你樂園（Miniland）千萬塊積木縮小版日本地標、搭旋轉觀景塔俯瞰名古屋港！
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-step">
+                <div class="time-bubble">16:15</div>
+                <div class="timeline-content">
+                    <div class="timeline-title-row">
+                        <span class="timeline-title">青波線返回名站 ➔ 弟弟推車補眠</span>
+                        <span class="stroller-tag">回程避開尖峰</span>
+                    </div>
+                    <div class="timeline-desc">
+                        提早於下午 15:45 出園搭車，避開下班下課人潮，孩子在暖和的電車上安穩小睡補充電力。
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-step">
+                <div class="time-bubble">17:30</div>
+                <div class="timeline-content">
+                    <div class="timeline-title-row">
+                        <span class="timeline-title">晚餐：矢場炸豬排（名鐵百貨本店 9F 旗艦店）</span>
+                        <span class="food-tag">熱鐵板紅味噌豬排</span>
+                    </div>
+                    <div class="timeline-desc">
+                        就在 Gate Tower 隔壁棟！招牌雙醬豬排、鐵板味噌腰內肉，門口還有巨大可愛的橫綱豬玩偶全家合照。吃飽搭電梯 3 分鐘回 15 樓房間放空！
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-bottom-grid">
+            <div class="spotlight-box">
+                <b>🚗 樂高駕照小秘訣</b>
+                哥哥完成開車體驗後，可以自費加購印有個人大頭照的實體樂高駕駛執照卡片，紀念價值滿分！
+            </div>
+            <div class="spotlight-box">
+                <b>🐷 矢場豬排點餐推薦</b>
+                推薦點鐵板味噌豬排（高麗菜絲吸飽熱醬汁）以及極為軟嫩的腰內肉（ヒレ），非常適合給小小孩分食！
+            </div>
+        </div>
+    </article>
+
+    <!-- ==================== DAY 4 ==================== -->
+    <article class="day-panel" id="day4">
+        <div class="day-banner" style="background: var(--color-sky);">
+            <div>
+                <span class="day-banner-title">Day 4：名古屋港水族館 ➔ 熱田神宮 ➔ 大須老街</span>
+                <div style="font-size: 12.5px; color: #0D47A1; margin-top: 2px;">2027/1/23 (週六) ｜ 11:00 海豚秀・千年楠木芬多精・有棚老街扭蛋</div>
+            </div>
+            <span class="day-banner-tag">海洋歷史老街線</span>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-step">
+                <div class="time-bubble">09:00<br>12:45</div>
+                <div class="timeline-content">
+                    <div class="timeline-title-row">
+                        <span class="timeline-title">名古屋港水族館（北館室內避寒 ＆ 海豚表演秀）</span>
+                        <span class="food-tag">11:00 海豚秀</span>
+                    </div>
+                    <div class="timeline-desc">
+                        搭地鐵名港線直達終點站。室內恆溫不怕冷！09:30 先看超罕見<b>虎鯨與小白鯨</b>；<b>10:40 前</b>入座主看台欣賞 <b>11:00 震撼海豚表演秀</b>！隨後看黑潮大水槽三萬隻沙丁魚龍捲風餵食。
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-step">
+                <div class="time-bubble">13:30<br>15:00</div>
+                <div class="timeline-content">
+                    <div class="timeline-title-row">
+                        <span class="timeline-title">熱田神宮（午後暖陽芬多精・千年古樹）</span>
+                        <span class="stroller-tag">弟弟推車午睡神隊友</span>
+                    </div>
+                    <div class="timeline-desc">
+                        搭名港線直通名城線至熱田神宮西站。午後是一天中最溫暖的時候，弟弟吃飽正好在推車上午睡，全家漫步於千年巨楠森林參道與信長塀，享受靜謐悠閒的日式洗禮。
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-step">
+                <div class="time-bubble">15:15<br>18:00</div>
+                <div class="timeline-content">
+                    <div class="timeline-title-row">
+                        <span class="timeline-title">大須商店街 ＆ 大須觀音寺（有遮雨棚老街）</span>
+                        <span class="food-tag">鯛魚燒/炸雞/扭蛋街</span>
+                    </div>
+                    <div class="timeline-desc">
+                        從神宮搭名城線僅 6 分鐘直達上前津站！高挑遮雨棚不怕吹冷風。品嚐熱騰騰現烤鯛魚燒、李先生台灣雞排；沿途數百台大型扭蛋機與動漫模型店，哥哥開心挖寶！
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-bottom-grid">
+            <div class="spotlight-box">
+                <b>🐬 水族館推車動線</b>
+                海豚表演看台有專門的推車停放區與輪椅/推車專屬看台席位，提前 20 分鐘抵達視野最好！
+            </div>
+            <div class="spotlight-box">
+                <b>🌲 神宮碎石路技巧</b>
+                熱田神宮主道為細碎石，推車建議走在靠兩側由行人踩實的平整土徑上，推起來毫不費力。
+            </div>
+        </div>
+    </article>
+
+    <!-- ==================== DAY 5 ==================== -->
+    <article class="day-panel" id="day5">
+        <div class="day-banner" style="background: var(--color-lavender);">
+            <div>
+                <span class="day-banner-title">Day 5：科技互動 ➔ GLITCH 手沖 ➔ 名站一條龍齊逛</span>
+                <div style="font-size: 12.5px; color: #4A148C; margin-top: 2px;">2027/1/24 (週日) ｜ 豐田科技館・神級咖啡・垂直免搬購物</div>
+            </div>
+            <span class="day-banner-tag">頂級品味採購日</span>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-step">
+                <div class="time-bubble">08:00</div>
+                <div class="timeline-content">
+                    <div class="timeline-title-row">
+                        <span class="timeline-title">早餐：Tsubame bread&milk（天然酵母生吐司）</span>
+                        <span class="food-tag">超厚爆漿歐姆蛋厚片</span>
+                    </div>
+                    <div class="timeline-desc">
+                        全家漫步 6 分鐘至名駅店。使用 100% 北海道美瑛小麥，招牌厚烤歐姆蛋起司三明治與小倉紅豆鮮奶厚片，孩子喝鮮乳吃得眉開眼笑！
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-step">
+                <div class="time-bubble">09:30<br>12:15</div>
+                <div class="timeline-content">
+                    <div class="timeline-title-row">
+                        <span class="timeline-title">豐田產業技術紀念館（Toyota Techno Museum）</span>
+                        <span class="stroller-tag">計程車 5 分鐘直達</span>
+                    </div>
+                    <div class="timeline-desc">
+                        飯店門口搭計程車起跳價即達！室內恆溫極平坦。哥哥在「Technoland 兒童科技樂園」挑戰齒輪傳動闖關；全家欣賞震撼的環形紡織機運轉與汽車組裝機械手臂動態展演。
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-step">
+                <div class="time-bubble">13:30</div>
+                <div class="timeline-content">
+                    <div class="timeline-title-row">
+                        <span class="timeline-title">GLITCH COFFEE NAGOYA（世界級手沖品飲）</span>
+                        <span class="food-tag">東京神保町頂級淺焙</span>
+                    </div>
+                    <div class="timeline-desc">
+                        離飯店僅 5 分鐘步程。全家一起入座！爸媽細品帶有草莓與花香層次的單一產區手沖；小孩喝鮮果汁吃小甜點，在極簡日系空間享受質感午後。
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-step">
+                <div class="time-bubble">14:45<br>18:30</div>
+                <div class="timeline-content">
+                    <div class="timeline-title-row">
+                        <span class="timeline-title">名站大樓一條龍齊逛：MUJI ➔ Bic Camera ➔ UNIQLO</span>
+                        <span class="stroller-tag">電梯垂直直達客房</span>
+                    </div>
+                    <div class="timeline-desc">
+                        全家手牽手依序逛街：<br>
+                        1. <b>名鐵百貨 6F【無印良品 MUJI】</b>：推車寬走道，媽媽選品與居家雜貨。<br>
+                        2. <b>Gate Tower 9-10F【Bic Camera】</b>：爸爸相機家電，兩兄弟看 Switch 與模型玩具。<br>
+                        3. <b>Gate Tower 11F【UNIQLO & GU 旗艦店】</b>：全家添購發熱衣與童裝。<br>
+                        買完搭電梯直接回 15F 房間打包戰利品，完全免在寒冬戶外提重物！
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-bottom-grid">
+            <div class="spotlight-box">
+                <b>☕ GLITCH 豆單推薦</b>
+                厭氧處理法（Anaerobic）的衣索比亞或哥倫比亞藝妓，熱熱喝與放涼後果香層次驚為天人！
+            </div>
+            <div class="spotlight-box">
+                <b>🧳 打包登機小叮嚀</b>
+                今晚在房內將 conte 料理器皿與液體類商品放行李箱托運，貴重相機、常備藥品隨身攜帶。
+            </div>
+        </div>
+    </article>
+
+    <!-- ==================== DAY 6 ==================== -->
+    <article class="day-panel" id="day6">
+        <div class="day-banner" style="background: #FFE4E6; border-color: #E5736E;">
+            <div>
+                <span class="day-banner-title" style="color: #991B1B;">Day 6：早班機 CI 151 從容返台（09:55 起飛）</span>
+                <div style="font-size: 12.5px; color: #B91C1C; margin-top: 2px;">2027/1/25 (週一) ｜ 時間精確・早晨不慌忙・平安賦歸</div>
+            </div>
+            <span class="day-banner-tag" style="background: #FFF1F2; color: #991B1B;">早班機專屬</span>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-step" style="border-color: #FCA5A5;">
+                <div class="time-bubble" style="background: #FEE2E2; border-color: #F87171;">06:30</div>
+                <div class="timeline-content">
+                    <div class="timeline-title-row">
+                        <span class="timeline-title">退房整裝 ➔ 搭電梯直達 1F 名鐵月台</span>
+                    </div>
+                    <div class="timeline-desc">
+                        穿戴好防寒外套，推著全部行李搭乘飯店垂直電梯直接下到 1 樓，刷卡進入名鐵名古屋站。
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-step" style="border-color: #FCA5A5;">
+                <div class="time-bubble" style="background: #FEE2E2; border-color: #F87171;">07:00</div>
+                <div class="timeline-content">
+                    <div class="timeline-title-row">
+                        <span class="timeline-title">搭乘名鐵 μ-SKY 特急前往機場</span>
+                        <span class="stroller-tag">全車指定席不怕週一擠車</span>
+                    </div>
+                    <div class="timeline-desc">
+                        約 07:28 準時抵達中部國際機場！全對號座車廂避開了週一清晨通勤人潮，舒適安心。
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-step" style="border-color: #FCA5A5;">
+                <div class="time-bubble" style="background: #FEE2E2; border-color: #F87171;">07:35</div>
+                <div class="timeline-content">
+                    <div class="timeline-title-row">
+                        <span class="timeline-title">第一航廈華航櫃檯報到 ＆ 托運行李</span>
+                    </div>
+                    <div class="timeline-desc">
+                        辦理登機證、秤重托運行李，嬰兒手推車辦理「機邊托運」，方便一路推至登機門。
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-step" style="border-color: #FCA5A5;">
+                <div class="time-bubble" style="background: #FEE2E2; border-color: #F87171;">08:15</div>
+                <div class="timeline-content">
+                    <div class="timeline-title-row">
+                        <span class="timeline-title">家庭優先安全檢查 ＆ 出境查驗</span>
+                    </div>
+                    <div class="timeline-desc">
+                        帶著 2.5 歲幼童可走 Priority / Family 家庭專用優先禮遇通道，免除漫長排隊考驗。
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-step" style="border-color: #FCA5A5;">
+                <div class="time-bubble" style="background: #FEE2E2; border-color: #F87171;">08:45</div>
+                <div class="timeline-content">
+                    <div class="timeline-title-row">
+                        <span class="timeline-title">免稅店伴手禮採買 ＆ 候機室悠閒早餐</span>
+                        <span class="food-tag">坂角總本舖黃金蝦餅</span>
+                    </div>
+                    <div class="timeline-desc">
+                        採購經典名產伴手禮；在候機室買熱飲與麵包牛奶，讓兄弟倆邊看停機坪的大飛機邊吃早餐。
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-step" style="border-color: #FCA5A5;">
+                <div class="time-bubble" style="background: #FEE2E2; border-color: #F87171;">09:55<br>12:20</div>
+                <div class="timeline-content">
+                    <div class="timeline-title-row">
+                        <span class="timeline-title">CI 151 起飛 ➔ 平安降落台北桃園 (TPE)</span>
+                    </div>
+                    <div class="timeline-desc">
+                        09:25 開始登機。12:20 返抵台灣，滿載美好的親子回憶與戰利品溫馨回家！
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- ==================== 趣味集章區 (Stamp Rally) ==================== -->
+    <section class="kawaii-card" id="stampSection" style="margin-top: 36px;">
+        <div class="tape-accent" style="background: rgba(255, 213, 79, 0.8);"></div>
+        <div class="card-header-title">
+            <span>💮</span> 日本旅行紀念章挑戰（點擊蓋章可發出音效！）
+        </div>
+        <p style="font-size: 13px; color: var(--text-sub);">
+            帶著手札踏遍名古屋！抵達景點時點擊下方圓框，蓋下專屬的手繪日式朱印（已收集 <span id="stampCountText" style="color: #E5736E; font-weight: 900;">0</span> / 6 個）：
+        </p>
+
+        <div class="stamp-grid">
+            <!-- 印章 1 -->
+            <div class="stamp-spot" onclick="toggleStamp(this, '金鯱', '名古屋')">
+                <span style="font-size: 28px;">🏯</span>
+                <span class="stamp-label">名古屋金鯱印</span>
+            </div>
+            <!-- 印章 2 -->
+            <div class="stamp-spot" onclick="toggleStamp(this, '科學', '天文館')">
+                <span style="font-size: 28px;">🪐</span>
+                <span class="stamp-label">科學館巨蛋印</span>
+            </div>
+            <!-- 印章 3 -->
+            <div class="stamp-spot" onclick="toggleStamp(this, '樂高', '駕訓隊')">
+                <span style="font-size: 28px;">🧱</span>
+                <span class="stamp-label">樂高冒險印</span>
+            </div>
+            <!-- 印章 4 -->
+            <div class="stamp-spot" onclick="toggleStamp(this, '虎鯨', '海豚秀')">
+                <span style="font-size: 28px;">🐬</span>
+                <span class="stamp-label">港水族館印</span>
+            </div>
+            <!-- 印章 5 -->
+            <div class="stamp-spot" onclick="toggleStamp(this, '熱田', '神宮福')">
+                <span style="font-size: 28px;">⛩️</span>
+                <span class="stamp-label">熱田神宮印</span>
+            </div>
+            <!-- 印章 6 -->
+            <div class="stamp-spot" onclick="toggleStamp(this, '美食', '鰻魚三吃')">
+                <span style="font-size: 28px;">🍱</span>
+                <span class="stamp-label">名古屋美食印</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 出發行李＆推車檢核表 ==================== -->
+    <section class="kawaii-card" id="checkSection">
+        <div class="tape-accent" style="background: rgba(168, 230, 207, 0.8);"></div>
+        <div class="card-header-title">
+            <span>🎒</span> 親子隨身行李與推車檢核清單
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+            <span>準備進度完成率：</span>
+            <b id="progressPercent" style="color: var(--color-mint-dark); font-size: 15px;">0%</b>
+        </div>
+        <div class="progress-bar-container">
+            <div class="progress-bar-fill" id="progressBar"></div>
+        </div>
+
+        <div class="checklist-grid">
+            <div class="check-card">
+                <b style="display: block; margin-bottom: 8px; font-size: 14px; color: #6D4C41;">👶 弟弟與推車專區</b>
+                <div class="check-item" onclick="toggleCheck(this)">
+                    <div class="custom-checkbox"></div>
+                    <span>輕便折疊手推車（可機邊托運）</span>
+                </div>
+                <div class="check-item" onclick="toggleCheck(this)">
+                    <div class="custom-checkbox"></div>
+                    <span>推車防風防雨罩（冬日擋冷風神器）</span>
+                </div>
+                <div class="check-item" onclick="toggleCheck(this)">
+                    <div class="custom-checkbox"></div>
+                    <span>加厚保暖小毛毯與推車固定夾</span>
+                </div>
+                <div class="check-item" onclick="toggleCheck(this)">
+                    <div class="custom-checkbox"></div>
+                    <span>尿布、濕紙巾與換洗備用衣 2 套</span>
+                </div>
+                <div class="check-item" onclick="toggleCheck(this)">
+                    <div class="custom-checkbox"></div>
+                    <span>兒童常備退燒止瀉藥與保溫水壺</span>
+                </div>
+            </div>
+
+            <div class="check-card">
+                <b style="display: block; margin-bottom: 8px; font-size: 14px; color: #6D4C41;">📄 證件票券與金流</b>
+                <div class="check-item" onclick="toggleCheck(this)">
+                    <div class="custom-checkbox"></div>
+                    <span>全家 4 本護照正本（有效期限半年以上）</span>
+                </div>
+                <div class="check-item" onclick="toggleCheck(this)">
+                    <div class="custom-checkbox"></div>
+                    <span>華航電子機票憑證與 Visit Japan Web QR</span>
+                </div>
+                <div class="check-item" onclick="toggleCheck(this)">
+                    <div class="custom-checkbox"></div>
+                    <span>樂高樂園入場 QR Code</span>
+                </div>
+                <div class="check-item" onclick="toggleCheck(this)">
+                    <div class="custom-checkbox"></div>
+                    <span>Suica / ICOCA 交通卡（綁定 Apple Pay）</span>
+                </div>
+                <div class="check-item" onclick="toggleCheck(this)">
+                    <div class="custom-checkbox"></div>
+                    <span>海外高回饋信用卡與百圓日幣零錢袋</span>
+                </div>
+            </div>
+
+            <div class="check-card">
+                <b style="display: block; margin-bottom: 8px; font-size: 14px; color: #6D4C41;">🧣 冬季保暖與採買行囊</b>
+                <div class="check-item" onclick="toggleCheck(this)">
+                    <div class="custom-checkbox"></div>
+                    <span>洋蔥式穿法（發熱衣、輕羽絨、防風大衣）</span>
+                </div>
+                <div class="check-item" onclick="toggleCheck(this)">
+                    <div class="custom-checkbox"></div>
+                    <span>全家保暖毛帽、耳罩與手套</span>
+                </div>
+                <div class="check-item" onclick="toggleCheck(this)">
+                    <div class="custom-checkbox"></div>
+                    <span>大容量折疊購物袋（Bic Camera/MUJI 採買）</span>
+                </div>
+                <div class="check-item" onclick="toggleCheck(this)">
+                    <div class="custom-checkbox"></div>
+                    <span>行李箱秤重器（回程抓限重必備）</span>
+                </div>
+                <div class="check-item" onclick="toggleCheck(this)">
+                    <div class="custom-checkbox"></div>
+                    <span>多孔旅用快充頭與手機相機充電線</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁尾祝福 -->
+    <footer class="footer-banner">
+        <p>祝 2027 名古屋家族探險一切平安、笑聲不斷、心願滿滿達成！ ✨🎌</p>
+        <p style="font-size: 11.5px; margin-top: 4px; color: #A39890;">Nagoya Family Trip 2027 ｜ Handmade with Kawaii Spirit</p>
+    </footer>
+
+    <!-- ==================== 純 Vanilla JS 互動核心 ==================== -->
+    <script>
+        // --- Web Audio 原生音效合成引擎 (無須外部音樂檔) ---
+        let audioCtx = null;
+        let soundEnabled = true;
+
+        function initAudio() {
+            if (!audioCtx) {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                if (AudioContext) {
+                    audioCtx = new AudioContext();
+                }
+            }
+            if (audioCtx && audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+        }
+
+        function playPopSound() {
+            if (!soundEnabled) return;
+            initAudio();
+            if (!audioCtx) return;
+
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            const now = audioCtx.currentTime;
+
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(450, now);
+            osc.frequency.exponentialRampToValueAtTime(800, now + 0.08);
+
+            gain.gain.setValueAtTime(0.2, now);
+            gain.gain.exponentialRampToValueAtTime(0.01, now + 0.08);
+
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc.start(now);
+            osc.stop(now + 0.09);
+        }
+
+        function playStampSound() {
+            if (!soundEnabled) return;
+            initAudio();
+            if (!audioCtx) return;
+
+            const now = audioCtx.currentTime;
+            
+            // 低音下沉衝擊 (Thud)
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(140, now);
+            osc.frequency.exponentialRampToValueAtTime(30, now + 0.12);
+
+            gain.gain.setValueAtTime(0.4, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.14);
+
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start(now);
+            osc.stop(now + 0.14);
+
+            // 清脆蓋印木頭敲擊波 (Click)
+            const osc2 = audioCtx.createOscillator();
+            const gain2 = audioCtx.createGain();
+            osc2.type = 'sine';
+            osc2.frequency.setValueAtTime(950, now);
+            osc2.frequency.exponentialRampToValueAtTime(250, now + 0.06);
+
+            gain2.gain.setValueAtTime(0.25, now);
+            gain2.gain.exponentialRampToValueAtTime(0.001, now + 0.06);
+
+            osc2.connect(gain2);
+            gain2.connect(audioCtx.destination);
+            osc2.start(now);
+            osc2.stop(now + 0.07);
+        }
+
+        function toggleAudio() {
+            soundEnabled = !soundEnabled;
+            const text = document.getElementById('audioStatusText');
+            if (soundEnabled) {
+                text.innerText = '音效：開啟中';
+                playPopSound();
+            } else {
+                text.innerText = '音效：已靜音';
+            }
+        }
+
+        // --- Day Tab 切換邏輯 ---
+        function switchDay(dayNum) {
+            playPopSound();
+            // 標籤狀態
+            const tabBtns = document.querySelectorAll('.day-tab-btn');
+            tabBtns.forEach((btn, index) => {
+                if (index === dayNum - 1) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            // 面板顯示
+            const panels = document.querySelectorAll('.day-panel');
+            panels.forEach(panel => panel.classList.remove('active'));
+            
+            const targetPanel = document.getElementById(`day${dayNum}`);
+            if (targetPanel) {
+                targetPanel.classList.add('active');
+            }
+        }
+
+        // --- 集章互動 (Stamp Rally) ---
+        let stampedCount = 0;
+
+        function toggleStamp(element, textTop, textBottom) {
+            const isStamped = element.classList.contains('stamped');
+
+            if (!isStamped) {
+                playStampSound();
+                element.classList.add('stamped');
+                element.innerHTML = `
+                    <div class="stamp-hanko">
+                        <span style="font-size: 10px; opacity: 0.9;">★ 巡礼 ★</span>
+                        <div style="font-size: 14px; font-weight: 900; letter-spacing: 1px;">${textTop}</div>
+                        <span style="font-size: 10px; font-weight: 700;">${textBottom}</span>
+                    </div>
+                    <span class="stamp-label" style="color: #D32F2F;">✓ 達成</span>
+                `;
+                stampedCount++;
+            } else {
+                playPopSound();
+                element.classList.remove('stamped');
+                element.innerHTML = `
+                    <span style="font-size: 28px;">💮</span>
+                    <span class="stamp-label">點擊補蓋章</span>
+                `;
+                stampedCount = Math.max(0, stampedCount - 1);
+            }
+
+            document.getElementById('stampCountText').innerText = stampedCount;
+        }
+
+        // --- 清單打勾與進度條計算 ---
+        function toggleCheck(item) {
+            playPopSound();
+            item.classList.toggle('done');
+            updateChecklistProgress();
+        }
+
+        function updateChecklistProgress() {
+            const allItems = document.querySelectorAll('.check-item');
+            const doneItems = document.querySelectorAll('.check-item.done');
+            const total = allItems.length;
+            const completed = doneItems.length;
+            const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
+
+            const progressBar = document.getElementById('progressBar');
+            const percentText = document.getElementById('progressPercent');
+
+            progressBar.style.width = percent + '%';
+            percentText.innerText = percent + '%';
+        }
+
+        function scrollToSection(id) {
+            playPopSound();
+            const el = document.getElementById(id);
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>
